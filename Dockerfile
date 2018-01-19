@@ -1,6 +1,6 @@
 FROM openjdk:8-jre
 
-COPY build/libs/java-*.jar /usr/app/devops.jar
+COPY build/libs/demoKafka-*.jar /usr/app/devops.jar
 
 WORKDIR /usr/app/
 
