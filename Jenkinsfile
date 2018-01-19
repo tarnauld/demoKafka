@@ -5,7 +5,7 @@ pipeline{
 			steps {
 				echo "Building..."
 				cd demoKafka
-				gradlew build
+				./gradlew build
 			}
 		}
 	}
