@@ -12,7 +12,7 @@ node {
   }
 
   stage('Build Docker Image') {
-      app = docker.build("devops/kafka-java")
+      app = docker.build("devops/demokafka")
   }
 
   stage('Publish To Docker Registry') {
@@ -20,5 +20,9 @@ node {
         app.push("${env.BUILD_NUMBER}")
         app.push("latest")
     }
+  }
+
+  stage('Deploy to Swarm') {
+      sh 'docker stack deploy --compose-file=docker-compose.yml app'
   }
 }
